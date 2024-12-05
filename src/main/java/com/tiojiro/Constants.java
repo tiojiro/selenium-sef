@@ -9,7 +9,7 @@ public class Constants {
     public static final String LOGIN_ERROR = "Login Erro";
     public static final String LOADED_PAGE = "Pagina carregada: ";
     public static final String CHECK_STRING_ERROR = "O título de residência que possui não permite";
-    public static final String CHECK_SEF_WEBSITE = "VERIFICAR AGENDAMENTO SEF! ";
+    public static final String CHECK_SEF_WEBSITE = "VERIFICAR PÁGINA DO SEF! ";
     public static final String BEGIN = "Início";
     public static final String END = "Fim\n";
     public static final String DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
