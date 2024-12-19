@@ -15,10 +15,11 @@ import java.util.concurrent.TimeUnit;
 import static com.tiojiro.Constants.*;
 
 public class Main {
-    public static void main(String[] args) {
-        StringBuilder checkDivErrorText = new StringBuilder();
+    public static void main(String[] args) throws InterruptedException {
+        StringBuilder checkDivErrorText = new StringBuilder(CHECK_STRING_ERROR);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
+
         do {
             ChromeDriver driver = new ChromeDriver(options);
             try {
@@ -59,11 +60,12 @@ public class Main {
                     printConsoleMsg(LOGIN_ERROR);
                 }
                 printConsoleMsg(END);
-                TimeUnit.HOURS.sleep(TWO);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch (NoSuchElementException e) {
+                printConsoleMsg(OPEN_COLOR_RED + ELEMENT_NOT_FOUND + CLOSE_COLOR_RED);
+                printConsoleMsg(END);
             } finally {
                 driver.quit();
+                TimeUnit.HOURS.sleep(TWO);
             }
         } while (checkDivErrorText.toString().startsWith(CHECK_STRING_ERROR));
     }
@@ -71,6 +73,7 @@ public class Main {
     private static void checkErrorText(ChromeDriver driver, StringBuilder checkDivErrorText) {
         try {
             WebElement divError = driver.findElement(new By.ById("ctl00_ctl53_g_49abea8d_9129_4f50_bf46_33662dfac0a6_ctl00_lblAuthError"));
+            checkDivErrorText.setLength(ZERO);
             checkDivErrorText.append(divError.getText().trim());
             printConsoleMsg(checkDivErrorText.toString());
             if (!checkDivErrorText.toString().startsWith(CHECK_STRING_ERROR)) {

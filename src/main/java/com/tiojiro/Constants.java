@@ -7,15 +7,17 @@ public class Constants {
     public static final String HOME = "Home";
     public static final String LOGIN_OK = "Login OK";
     public static final String LOGIN_ERROR = "Login Erro";
-    public static final String LOADED_PAGE = "Pagina carregada: ";
+    public static final String LOADED_PAGE = "Página carregada: ";
     public static final String CHECK_STRING_ERROR = "O título de residência que possui não permite";
     public static final String CHECK_SEF_WEBSITE = "VERIFICAR PÁGINA DO SEF! ";
     public static final String BEGIN = "Início";
     public static final String END = "Fim\n";
     public static final String DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
+    public static final int ZERO = 0;
     public static final long TWO = 2;
     public static final String OPEN_COLOR_RED = "\u001B[31m";
     public static final String CLOSE_COLOR_RED = "\u001B[0m";
     public static final String OPEN_BRACKET = "[";
     public static final String CLOSE_BRACKET = "] ";
+    public static final String ELEMENT_NOT_FOUND = "Elemento da página carregada não encontrado";
 }
